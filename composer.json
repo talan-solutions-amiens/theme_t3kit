@@ -1,5 +1,5 @@
 {
-  "name": "t3kit/theme-t3kit",
+  "name": "talan-solutions-amiens/theme_t3kit",
   "description": "Base Theme fot t3kit project",
   "type": "typo3-cms-extension",
   "keywords": ["t3kit", "typo3", "cms", "starter"],
@@ -35,7 +35,7 @@
     "typo3-ter/realurl": "~2.3.2",
     "typo3-themes/themes": "~8.7.0",
     "typo3-ter/gridelements": "~8.2.1",
-    "typo3-ter/solr": "~7.5.0",
+    "typo3-ter/solr": "9.0.2",
     "typo3-ter/dyncss-less": "0.7.9",
     "typo3-ter/go-maps-ext": "~2.3.1",
     "typo3-ter/cs-seo": "~2.3.3",
