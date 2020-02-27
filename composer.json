@@ -26,6 +26,18 @@
     {
       "type": "composer",
       "url": "https://composer.typo3.org/"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/t3kit/themes"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/t3kit/TYPO3.dyncss"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/t3kit/TYPO3.dyncss_less"
     }
   ],
   "minimum-stability": "dev",

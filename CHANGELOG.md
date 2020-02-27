@@ -1,4 +1,115 @@
 
+#### v2.10.3 `May 28, 2019`
+
+- **[TASK]** update frontend_editing to v1.5.0 ([36009f3](https://github.com/t3kit/theme_t3kit/commit/36009f3))
+- **[BUGFIX]** fix the order of required extensions ([b282b92](https://github.com/t3kit/theme_t3kit/commit/b282b92))
+- **[TASK]** add Dyncss and Themes as a theme_t3kit deps ([d061bc7](https://github.com/t3kit/theme_t3kit/commit/d061bc7))
+
+***
+
+#### v2.10.2 `May 21, 2019`
+
+- **[BUGFIX]** fix header layout in Collapsible CE ([d24ee44](https://github.com/t3kit/theme_t3kit/commit/d24ee44))
+- **[TASK]** update gridelements to v9.2.1 ([e042647](https://github.com/t3kit/theme_t3kit/commit/e042647))
+- **[TASK]** turn of solr statistics by default fix#522 ([d52e264](https://github.com/t3kit/theme_t3kit/commit/d52e264))
+
+***
+
+#### v2.10.1 `April 17, 2019`
+
+- **[BUGFIX]** - search-button in main-navigation is hidden under search-box when language-menu-box is enabled. (#508) ([eff2552](https://github.com/t3kit/theme_t3kit/commit/eff2552))
+- **[BUGFIX]** mobile: no expanded submenu cross in main-navigation when using dropdownColumns (#514) ([29a26e5](https://github.com/t3kit/theme_t3kit/commit/29a26e5))
+- **[BUGFIX]** searchBtn/searchBox toggle rewrite. (#515) ([08b1ecd](https://github.com/t3kit/theme_t3kit/commit/08b1ecd))
+- **[BUGFIX]** language menu in main-nav alignment when using dropdownColumns (#516) ([f28b2cd](https://github.com/t3kit/theme_t3kit/commit/f28b2cd))
+- **[BUGFIX]** Main Navigation dropdown hover flickering between dropdowns. (#512) ([ac34c19](https://github.com/t3kit/theme_t3kit/commit/ac34c19))
+- **[BUGFIX]** ie11 and edge social-icons underline fix (#521) ([50c2e52](https://github.com/t3kit/theme_t3kit/commit/50c2e52))
+- **[BUGFIX]** hovering on dropdownColumns before js has loaded will invert the toggle-effect (#510) ([bb66922](https://github.com/t3kit/theme_t3kit/commit/bb66922))
+- **[BUGFIX]** If search button is clicked (in header-top or main-navigation) before js is loaded, user is sent to index-page. Similar fix for language-menu-btn. Removal of double attribute (data-search) in tag. (#509) ([a7142b3](https://github.com/t3kit/theme_t3kit/commit/a7142b3))
+- **[BUGFIX]** Meta navigation hidden when using language menu in main-naivgation. Doesn't reappear when clicking languageMenuOverlay to close it. (#518) ([9bf7fd3](https://github.com/t3kit/theme_t3kit/commit/9bf7fd3))
+- **[BUGFIX]** removal of colon in languageMenu_label (#520) ([a83f289](https://github.com/t3kit/theme_t3kit/commit/a83f289))
+- **[TASK]** add sitemap config for News records ([6f02333](https://github.com/t3kit/theme_t3kit/commit/6f02333))
+- **[BUGFIX]** add video (internal, vimeo, youtube) support for different news list views (#501) ([45cc3c3](https://github.com/t3kit/theme_t3kit/commit/45cc3c3))
+- **[BUGFIX]** news-single page navigation 'next record link' aligned to left when no 'previous record link'. (#500) ([3422e9d](https://github.com/t3kit/theme_t3kit/commit/3422e9d))
+- **[BUGFIX]** language menu item should not be clickable in case language is unavailable (#498) ([0a2df0b](https://github.com/t3kit/theme_t3kit/commit/0a2df0b))
+
+***
+
+#### v2.10.0 `March 19, 2019`
+
+- **[TASK]** fix spelling of swedish label (#496) ([f000bed](https://github.com/t3kit/theme_t3kit/commit/f000bed))
+- **[BUGFIX]** use TYPO3 ArrayUtility to merge language menu config (#495) ([5d92478](https://github.com/t3kit/theme_t3kit/commit/5d92478))
+- **[TASK]** add slug replacements of special chars for "pages" and 'news" tables (#494) ([edff67e](https://github.com/t3kit/theme_t3kit/commit/edff67e))
+- **[BUGFIX]** use valid path for category label (#493) ([b031e7a](https://github.com/t3kit/theme_t3kit/commit/b031e7a))
+- **[TASK]** use new version of pxa-form-enhancement ext. ([6bdebe8](https://github.com/t3kit/theme_t3kit/commit/6bdebe8))
+- **[TASK]** update ext-s, use versions instead of dev-master ([da42bf5](https://github.com/t3kit/theme_t3kit/commit/da42bf5))
+- **[TASK]** use current page as list page, when listPid is not set (#490) ([9ddb216](https://github.com/t3kit/theme_t3kit/commit/9ddb216))
+- **[TASK]** rebuild how the language menu is rendered, respect site configuration (#486) ([c62a724](https://github.com/t3kit/theme_t3kit/commit/c62a724))
+- **[BUGFIX]** fixes slider container effects (#489) ([373a3bc](https://github.com/t3kit/theme_t3kit/commit/373a3bc))
+- **[TASK]** remove get parameters for first page url on news list view (#488) ([98a17e1](https://github.com/t3kit/theme_t3kit/commit/98a17e1))
+- **[TASK]** change default solr core name to 'core' (#487) ([22b8a27](https://github.com/t3kit/theme_t3kit/commit/22b8a27))
+- **[TASK]** update cs_seo ([5e4f8c7](https://github.com/t3kit/theme_t3kit/commit/5e4f8c7))
+- **[FEATURE]** add ext. Solr support (#485) ([e8ee00d](https://github.com/t3kit/theme_t3kit/commit/e8ee00d))
+- **[BUGFIX]** remove box-shadow on active state when clicking big-icon-text element with whole area as link (#480) ([3342e0d](https://github.com/t3kit/theme_t3kit/commit/3342e0d))
+- **[TASK]** Clean-up realurl stuff (#484) ([3e9c68d](https://github.com/t3kit/theme_t3kit/commit/3e9c68d))
+- **[BUGFIX]** change maxWidth and add maxHeight to use correct parameter (#481) ([9b0ccf4](https://github.com/t3kit/theme_t3kit/commit/9b0ccf4))
+- **[BUGFIX]** add if-statement for media, if showinpreview is enabled/disabled (#482) ([6c65146](https://github.com/t3kit/theme_t3kit/commit/6c65146))
+
+:heavy_exclamation_mark:**Breaking Changes:**
+- **[!!!]** **[TASK]** update Gridelements config to use new approach w/DataProcessing ([50b9e8f](https://github.com/t3kit/theme_t3kit/commit/50b9e8f))
+
+***
+
+#### v2.10.0-beta `February 14, 2019`
+
+- **[BUGFIX]** fix focus outline for main menu dropdown arrow (touch devices) (#477) ([3cc0d76](https://github.com/t3kit/theme_t3kit/commit/3cc0d76))
+- **[TASK]** add space instead of margin-left to Contacts CE (#475) ([5df7c3a](https://github.com/t3kit/theme_t3kit/commit/5df7c3a))
+- **[BUGFIX]** removed the wrong style and aria attributes from footer, add bootstrap class "sr-only" (#472) ([d852042](https://github.com/t3kit/theme_t3kit/commit/d852042))
+- **[BUGFIX]** add extension name to data-video-url if it is not a youtube video (#473) ([e5f2278](https://github.com/t3kit/theme_t3kit/commit/e5f2278))
+- **[BUGFIX]** fix issue with parallax plugin not showing on mobile devices,IE,Edge (#476) ([5ae78ef](https://github.com/t3kit/theme_t3kit/commit/5ae78ef))
+- **[BUGFIX]** fix language menu select focus bug accessibility ([c008996](https://github.com/t3kit/theme_t3kit/commit/c008996))
+- **[BUGFIX]** Use more semantic labels in quote CE ([fd5d67b](https://github.com/t3kit/theme_t3kit/commit/fd5d67b))
+- **[FEATURE]** Add link and lightbox icon for images (#467) ([49e069c](https://github.com/t3kit/theme_t3kit/commit/49e069c))
+- **[BUGFIX]** correct TYPO3 and PHP version (.travis) (#468) ([2dce134](https://github.com/t3kit/theme_t3kit/commit/2dce134))
+- **[TASK]** add possibility to adjust image height using Max height input in news ext (News Carousel) ([a4d9d3b](https://github.com/t3kit/theme_t3kit/commit/a4d9d3b))
+- **[BUGFIX]** fix TAB content element ([156833c](https://github.com/t3kit/theme_t3kit/commit/156833c))
+- **[TASK]** update language navigation menu (#463) ([7c76272](https://github.com/t3kit/theme_t3kit/commit/7c76272))
+- **[BUGFIX]** fix distance of the text from the arrow bootstrap slider  (#461) ([1819d93](https://github.com/t3kit/theme_t3kit/commit/1819d93))
+- **[BUGFIX]** add missing variables for advanced 4 column grid (#462) ([a04b0cc](https://github.com/t3kit/theme_t3kit/commit/a04b0cc))
+- **[BUGFIX]** adapt accordion template to use with Gridelements v9 (#457) ([83c08d0](https://github.com/t3kit/theme_t3kit/commit/83c08d0))
+- **[BUGFIX]** change partialRootPaths to include partials from FluidStyledContent (#458) ([a8ef057](https://github.com/t3kit/theme_t3kit/commit/a8ef057))
+
+***
+
+#### v2.10.0-alpha `January 4, 2019`
+
+- **[TASK]** install cs_seo extension (#456) ([140062b](https://github.com/t3kit/theme_t3kit/commit/140062b))
+- **[BUGFIX]** implement LoggerAwareInterface interface in order to get logger inject (#455) ([dfe0bc4](https://github.com/t3kit/theme_t3kit/commit/dfe0bc4))
+- **[TASK]** setup default Gridelements options ([790b500](https://github.com/t3kit/theme_t3kit/commit/790b500))
+- **[BUGFIX]** fix rendering of content elements inside gridelements columns (#454) ([78814ed](https://github.com/t3kit/theme_t3kit/commit/78814ed))
+- **[BUGFIX]** fix gridelements templateRootPaths ([b36b185](https://github.com/t3kit/theme_t3kit/commit/b36b185))
+- **[TASK]** update Gridelements extension to v9 ([30023da](https://github.com/t3kit/theme_t3kit/commit/30023da))
+- **[BUGFIX]** use correct FlexFormService in FlexFormProcessor ([7c8db4e](https://github.com/t3kit/theme_t3kit/commit/7c8db4e))
+- **[TASK]** update pxa_newsletter_subscription, form-enhancement and cookie-bar  ext-s ([c112243](https://github.com/t3kit/theme_t3kit/commit/c112243))
+- **[BUGFIX]** use correct FlexFormService in FlexFormProcessor ([68554f3](https://github.com/t3kit/theme_t3kit/commit/68554f3))
+- **[TASK]** remove usage of deprecated classes and functions. Log error if not possible to write to realurl config, instead of throwing exception ([217d628](https://github.com/t3kit/theme_t3kit/commit/217d628))
+- **[TASK]** use argument source ([f4c9e02](https://github.com/t3kit/theme_t3kit/commit/f4c9e02))
+- **[TASK]** register argument source ([a10f0a1](https://github.com/t3kit/theme_t3kit/commit/a10f0a1))
+- **[TASK]** replace removed extRelPath ([e46e794](https://github.com/t3kit/theme_t3kit/commit/e46e794))
+- **[TASK]** remove realurl, themes, dyncss, less-cs_seo, 404 extensions ([c54abb3](https://github.com/t3kit/theme_t3kit/commit/c54abb3))
+- **[TASK]** use master branch for solr ext. ([58a823a](https://github.com/t3kit/theme_t3kit/commit/58a823a))
+- **[TASK]** update cs_seo and go_maps_ext extensions ([8a97ecd](https://github.com/t3kit/theme_t3kit/commit/8a97ecd))
+- **[TASK]** update PXA extensions ([bbad05e](https://github.com/t3kit/theme_t3kit/commit/bbad05e))
+- **[TASK]** use last version of frontend-editing ext. 1.4.3 ([11874f0](https://github.com/t3kit/theme_t3kit/commit/11874f0))
+- **[TASK]** use master branch for gridelements ext. ([ff27784](https://github.com/t3kit/theme_t3kit/commit/ff27784))
+- **[TASK]** use master branch for NEWS ext. ([27a08c2](https://github.com/t3kit/theme_t3kit/commit/27a08c2))
+- **[TASK]** update typo3 to v9.5 ([008cee4](https://github.com/t3kit/theme_t3kit/commit/008cee4))
+- **[BUGFIX]** Fix packages names and solve dependancy to typo3-core to its packages (#452) ([6be2ed4](https://github.com/t3kit/theme_t3kit/commit/6be2ed4))
+
+:heavy_exclamation_mark:**Breaking Changes:**
+- **[!!!]** **[TASK]** adapt grid templates to use with Gridelements v9 ([a78d995](https://github.com/t3kit/theme_t3kit/commit/a78d995))
+
+***
+
 #### v2.9.0 `October 26, 2018`
 - **[BUGFIX]** fix collapsible element, fix the issue with collapsed class on the a-tag ([0cee30e](https://github.com/t3kit/theme_t3kit/commit/0cee30e))
 - **[FEATURE]** add a preloader until slider container is initialized (#442) ([d134468](https://github.com/t3kit/theme_t3kit/commit/d134468))

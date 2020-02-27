@@ -19,7 +19,10 @@ themes.configuration.features.searchTargetPage = 71
 
 # customsubcategory=news= News configuration
 # cat=theme,advanced/news/; type=int+; label= News default detail page id
-themes.configuration.features.newsDefaultDetailPid = 42
+themes.configuration.features.newsDefaultDetailPid = 44
+# customsubcategory=news= News configuration
+# cat=theme,advanced/news/; type=int+; label= News storage PID
+themes.configuration.features.newsStoragePid = 41
 
 # customsubcategory=maps= Google map configuration
 # cat=theme,advanced/maps; type=string; label= Google map api url (api key required)
@@ -46,7 +49,7 @@ themes.configuration.siteDomain = t3kit.testserver.pixelant.nu
 # cat=theme,expert/solr/; type=options[0,1]; label= Enable solr search
 themes.configuration.features.enableSolr = 0
 # cat=theme,expert/solr/; type=string; label= Base solr core name (no spaces): Will be combined with language ISO code in solr path
-themes.configuration.features.solrBaseCoreName = t3kit
+themes.configuration.features.solrBaseCoreName = core
 
 
 # customsubcategory=layout= FElayout
@@ -89,4 +92,4 @@ themes.configuration.spamProtectEmailAddresses.lastDotSubst = .<span style="disp
 # more configuration
 ##########################################################################################
 themes.languages.default.isoCode = en_GB
-themes.configuration.headerComment = This website is based on t3kit v8.8.0 - www.t3kit.com
+themes.configuration.headerComment = This website is based on t3kit v8.9.3 - www.t3kit.com

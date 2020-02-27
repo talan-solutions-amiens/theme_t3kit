@@ -14,8 +14,10 @@ jQuery(function ($) {
   var $dropdownMenuWithColumns = $('.js__dropdown-menu-with-columns .js__main-navigation__item._sub')
 
   if (!touchSupport) {
-    $dropdownMenuWithColumns.hover(function () {
-      $(this).toggleClass('open')
+    $dropdownMenuWithColumns.mouseenter(function () {
+      $(this).addClass('open')
+    }).mouseleave(function () {
+      $(this).removeClass('open')
     })
   }
 
@@ -132,33 +134,45 @@ jQuery(function ($) {
   var $languageMenuBtn = $('.js__header-top__language-menu-btn')
   var $languageMenuBox = $('.js__header-top__language-menu-box')
   var $languageMenuBoxCloseBtn = $('.js__header-top__language-menu-box-close-btn')
+  var $metaNavigationNav = $('.js__header-top_meta-nav')
 
   $mainNavigationSearchBtn.on('click', function (e) {
     e.preventDefault()
-    $(this).toggleClass('_search-close-btn')
     $mainNavigationSearchBox.toggleClass('_search-box-visible')
     if ($mainNavigationSearchBox.hasClass('_search-box-visible')) {
       $mainNavigationSearchBox.find('input[type="search"]').focus()
+      $mainNavigationSearchBtn.addClass('_search-close-btn')
+      $mainNavigationSearchBoxOverlay.addClass('_search-box-overlay-visible')
+    } else {
+      $mainNavigationSearchBtn.removeClass('_search-close-btn')
+      $mainNavigationSearchBoxOverlay.removeClass('_search-box-overlay-visible')
     }
-    $mainNavigationSearchBoxOverlay.toggleClass('_search-box-overlay-visible')
   })
   $mainNavigationSearchBoxOverlay.on('click', function () {
-    $(this).toggleClass('_search-box-overlay-visible')
-    $mainNavigationSearchBtn.toggleClass('_search-close-btn')
-    $mainNavigationSearchBox.toggleClass('_search-box-visible')
+    $(this).removeClass('_search-box-overlay-visible')
+    $mainNavigationSearchBtn.removeClass('_search-close-btn')
+    $mainNavigationSearchBox.removeClass('_search-box-visible')
   })
+
   $languageMenuBtn.on('click', function (e) {
     e.preventDefault()
     $languageMenuBox.addClass('_language-menu-box-visible')
-    $languageMenuOverlay.toggleClass('_language-menu-box-overlay-visible')
+    $languageMenuOverlay.addClass('_language-menu-box-overlay-visible')
+
+    // hide meta-navigation if showHeaderTopLangMenu = 1
+    if ($('.header-top .js__header-top__language-menu-box').length) {
+      $metaNavigationNav.addClass('hidden')
+    }
   })
   $languageMenuOverlay.on('click', function () {
-    $(this).toggleClass('_language-menu-box-overlay-visible')
+    $(this).removeClass('_language-menu-box-overlay-visible')
     $languageMenuBox.removeClass('_language-menu-box-visible')
+    $metaNavigationNav.removeClass('hidden')
   })
   $languageMenuBoxCloseBtn.on('click', function () {
-    $languageMenuOverlay.toggleClass('_language-menu-box-overlay-visible')
+    $languageMenuOverlay.removeClass('_language-menu-box-overlay-visible')
     $languageMenuBox.removeClass('_language-menu-box-visible')
+    $metaNavigationNav.removeClass('hidden')
   })
 })
 
@@ -285,17 +299,15 @@ jQuery(function ($) {
   $(document).ready(function () {
     // Parallax
     // https://github.com/nk-o/jarallax
-    if (!$('html').hasClass('IE')) { // disabled in IE since scrolling looks jerky
+    if (!$('html').hasClass('IE')) { // if the browser is not IE
       $('.parallax-img').jarallax({
         type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
-        speed: 0.5,
-        disableParallax: /iPad|iPhone|iPod|Edge/ // disable Ios and Microsoft Edge
+        speed: 0.5
       })
       $('.parallax-resimg').each(function () {
         $(this).jarallax({
           type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
           speed: 0.5,
-          disableParallax: /iPad|iPhone|iPod|Edge/, // disable Ios and Microsoft Edge
           imgSrc: $(this).css('background-image').match(/\(([^)]+)\)/)[1].replace(/"/g, '')
         })
       })
@@ -303,8 +315,29 @@ jQuery(function ($) {
         $(this).jarallax({
           type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
           speed: 0.5,
-          disableParallax: /iPad|iPhone|iPod|Android/, // disable Ios and Android
           videoSrc: $(this).attr('data-video-url')
+        })
+      })
+    } else { // disabled parallax in IE since scrolling looks jerky
+      $('.parallax-img').jarallax({
+        type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
+        speed: 0.5,
+        disableParallax: /IE/
+      })
+      $('.parallax-resimg').each(function () {
+        $(this).jarallax({
+          type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
+          speed: 0.5,
+          imgSrc: $(this).css('background-image').match(/\(([^)]+)\)/)[1].replace(/"/g, ''),
+          disableParallax: /IE/
+        })
+      })
+      $('.parallax-video').each(function () {
+        $(this).jarallax({
+          type: 'scroll', // scroll, scale, opacity, scroll-opacity, scale-opacity
+          speed: 0.5,
+          videoSrc: $(this).attr('data-video-url'),
+          disableParallax: /IE/
         })
       })
     }
@@ -382,7 +415,7 @@ jQuery(function ($) {
           widthForMediumLaptop = 3
         }
         var slider = new Swiper(currentSlider, {
-          containerModifierClass: 'js__slider-container__container',
+          containerModifierClass: 'swiper-container-',
           wrapperClass: 'js__slider-container__wrapper',
           slideClass: 'js__slider-container__slide',
           nextButton: currentSlider.parent().find('.js__slider-container__btn-next'),
@@ -683,6 +716,7 @@ var mainSearchInputList = {}
         autoFirst: true
       })
       var req = false
+
       $(this).on('keyup.search.suggest', function (e) {
         var c = e.keyCode
         if (c === 13 || c === 27 || c === 38 || c === 40) {
@@ -694,16 +728,19 @@ var mainSearchInputList = {}
             req = true
             $.ajax({
               url: that.closest('form').data('suggest'),
-              dataType: 'json',
+              dataType: 'jsonp',
+              jsonp: 'tx_solr[callback]',
               data: {
-                termLowercase: that.val().toLowerCase(),
-                termOriginal: that.val(),
-                L: that.closest('form').find('input[name="L"]').val()
+                tx_solr: {
+                  queryString: that.val().toLowerCase()
+                }
               },
               success: function (data) {
+                var suggestions = data.suggestions || []
+
                 req = false
                 var arrr = []
-                $.each(data, function (term) {
+                $.each(suggestions, function (term) {
                   arrr.push(term)
                 })
                 mainSearchInputList['searchItem' + index]._list = arrr
